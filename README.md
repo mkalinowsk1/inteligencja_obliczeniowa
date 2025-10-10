@@ -1,0 +1,1 @@
+# inteligencja_obliczeniowa
