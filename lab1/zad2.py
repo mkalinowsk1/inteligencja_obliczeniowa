@@ -11,15 +11,12 @@ def calculate_distance(alpha):
     (V0 * math.sin(alpha) + math.sqrt((V0 * math.sin(alpha))**2 + 2 * g * h)) / g)
 
 def draw_plot(alpha):
-    # Oblicz czas lotu
     t_max = (V0 * math.sin(alpha) + math.sqrt((V0 * math.sin(alpha))**2 + 2 * g * h)) / g
     t_values = [t for t in [i * t_max / 1000 for i in range(1001)]]
 
-    # Współrzędne toru lotu
     x = [V0 * math.cos(alpha) * t for t in t_values]
     y = [h + V0 * math.sin(alpha) * t - 0.5 * g * t**2 for t in t_values]
 
-    # Rysowanie wykresu
     plt.figure(figsize=(8, 5))
     plt.plot(x, y, 'b', label='Trajektoria')
     plt.title('Trajektoria lotu pocisku')
