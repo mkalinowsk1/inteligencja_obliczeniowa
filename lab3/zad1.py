@@ -18,10 +18,10 @@ len = test_set.shape[0]
 print(classify_iris(train_set[2][0], train_set[2][1], train_set[2][2], train_set[2][3]))
 
 for i in range(len):
-    sl = float(train_set[i][0])
-    sw = float(train_set[i][1])
-    pl = float(train_set[i][2])
-    pw = float(train_set[i][3])
+    sl = float(test_set[i][0])
+    sw = float(test_set[i][1])
+    pl = float(test_set[i][2])
+    pw = float(test_set[i][3])
     if classify_iris(sl, sw, pl , pw) == test_set[i][4]:
         good_predictions = good_predictions + 1
 print(good_predictions)
