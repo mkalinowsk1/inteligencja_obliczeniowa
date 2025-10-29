@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # a) Podziel w losowy sposób bazę danych na zbiór treningowy (70%) i testowy (30%).
 
-df = pd.read_csv("iris.csv")
+df = pd.read_csv("iris_big.csv")
 
 X = df[['sepal.length', 'sepal.width', 'petal.length', 'petal.width']].values
 y = df['variety'].values

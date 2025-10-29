@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 # Wyświetl oba zbiory. Podziel te zbiory na cztery części (inputy i class), jeśli jest taka potrzeba.
 
 
-df = pd.read_csv("iris.csv")
+df = pd.read_csv("iris_big.csv")
 all_inputs = df[['sepal.length', 'sepal.width', 'petal.length', 'petal.width']].values
 all_classes = df['variety'].values
 (train_inputs, test_inputs, train_classes, test_classes) = train_test_split(
@@ -28,7 +28,7 @@ clf = clf.fit(train_inputs, train_classes)
 
 # d) Wyświetl drzewo w formie tekstowej i/lub w formie graficznej.
 
-tree.plot_tree(clf)
+tree.plot_tree(clf, filled=True)
 plt.show()
 
 # e) Dokonaj ewaluacji klasyfikatora: sprawdź jak drzewo poradzi sobie z rekordami ze zbioru testowego. Wyświetl
