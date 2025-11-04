@@ -1,22 +1,17 @@
-from sklearn.datasets import load_iris
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.metrics import accuracy_score, confusion_matrix
 
-iris = load_iris()
-x = iris.data
-y = iris.target
-
-X_train, X_test, y_train, y_test = train_test_split(
-    x, y, test_size=0.3, random_state=42
-)
+df = pd.read_csv("iris_big.csv")
+all_inputs = df[['sepal.length', 'sepal.width', 'petal.length', 'petal.width']].values
+all_classes = df['variety'].values
+(X_train, X_test, y_train, y_test) = train_test_split(
+    all_inputs, all_classes, train_size=0.7, random_state=288549)
 
 
-print("Klasy irysów: ")
-for i, name in enumerate(iris.target_names):
-    print(f"  {i} = {name}")
 
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
@@ -71,7 +66,7 @@ encoder = OneHotEncoder(sparse_output=False)
 y_train_encoded = encoder.fit_transform(y_train_2d)
 y_test_encoded = encoder.transform(y_test_2d)
 
-print(f"Oryginalna etykieta: {y_train[0]} ({iris.target_names[y_train[0]]})")
+print(f"Oryginalna etykieta: {y_train[0]} ({all_classes[0]})")
 print(f"Po one-hot encoding: {y_train_encoded[0]}")
 
 architectures_onehot = [
