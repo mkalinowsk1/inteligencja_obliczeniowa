@@ -70,9 +70,9 @@ print(f"Oryginalna etykieta: {y_train[0]} ({all_classes[0]})")
 print(f"Po one-hot encoding: {y_train_encoded[0]}")
 
 architectures_onehot = [
-    (5,),           # warstwa ukryta: 5 neuronów, output: 3 neurony
-    (5, 3),         # warstwy ukryte: 5, 3 neurony, output: 3 neurony
-    (5, 3, 2)       # warstwy ukryte: 5, 3, 2 neurony, output: 3 neurony
+    (5,),           
+    (5, 3),         
+    (5, 3, 2)       
 ]
 
 results3 = []
@@ -87,7 +87,7 @@ for i, arch in enumerate(architectures_onehot, 1):
         activation='relu'
     )
     
-    mlp.fit(X_train_scaled, y_train)  # sklearn automatycznie obsługuje one-hot na output
+    mlp.fit(X_train_scaled, y_train)  
     y_pred = mlp.predict(X_test_scaled)
     
     accuracy = accuracy_score(y_test, y_pred)
@@ -102,7 +102,6 @@ for i, arch in enumerate(architectures_onehot, 1):
         'confusion_matrix': cm
     })
 
-# Porównanie z zadaniem 2
 print("\n--- PORÓWNANIE: Zadanie 2 vs Zadanie 3 ---")
 for i in range(len(results2)):
     print(f"Architektura {architectures[i]}:")

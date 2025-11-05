@@ -24,7 +24,7 @@ for col in columns_to_check:
     if col in df.columns:
         zeros = (df[col] == 0).sum()
         if zeros > 0:
-            print(f"{col}: {zeros} wartości zerowych (prawdopodobnie błędne)")
+            print(f"{col}: {zeros} wartości zerowych")
             df[col] = df[col].replace(0, df[col].median())
 
 # b) Sprawdzenie danych kategorialnych
@@ -33,7 +33,6 @@ print(df.dtypes)
 categorical_cols = df.select_dtypes(include=['object']).columns
 if len(categorical_cols) > 0:
     print(f"Kolumny kategorialne: {list(categorical_cols)}")
-    # Konwersja na numeryczne
     le = LabelEncoder()
     for col in categorical_cols:
         df[col] = le.fit_transform(df[col])
@@ -79,7 +78,7 @@ for name, clf in classifiers.items():
     print(f"Accuracy: {accuracy:.4f} ({accuracy*100:.2f}%)")
     print(f"Macierz błędów:\\n{cm}")
 
-# f) Wykres słupkowy
+# f) Wykres
 plt.figure(figsize=(12, 6))
 names = list(results.keys())
 accuracies = [results[name]['accuracy'] * 100 for name in names]
@@ -95,11 +94,8 @@ plt.show()
 
 # g) Analiza błędów FP i FN
 print("\\n--- ANALIZA BŁĘDÓW ---")
-print("FN (False Negative): Chory zaklasyfikowany jako zdrowy - POWAŻNIEJSZY błąd!")
-print("FP (False Positive): Zdrowy zaklasyfikowany jako chory - mniej poważny")
-print("\\nW kontekście diagnozy cukrzycy:")
-print("- FN jest groźniejszy: osoba chora nie dostanie leczenia")
-print("- FP jest mniej groźny: osoba zdrowa zostanie skierowana na dodatkowe badania")
+print("FN (False Negative): Chory zaklasyfikowany jako zdrowy")
+print("FP (False Positive): Zdrowy zaklasyfikowany jako chory")
 
 for name, res in results.items():
     cm = res['confusion_matrix']
