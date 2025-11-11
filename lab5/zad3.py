@@ -11,10 +11,10 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropou
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 
 
-DATA_PATH = 'C:/Users/Kali/Desktop/code/dogs-cats-mini'   
+DATA_PATH = '/home/kali/Desktop/code/dogs-cats-mini'   
 IMG_SIZE = (150, 150)            
 BATCH_SIZE = 32
-EPOCHS = 1                      
+EPOCHS = 20                      
 VALIDATION_SPLIT = 0.2            
 SEED = 42
 AUTOTUNE = tf.data.AUTOTUNE
@@ -132,7 +132,7 @@ def plot_history(history):
     plt.grid(True, linestyle='--', alpha=0.5)
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig("wykres1.png")
 
 plot_history(history)
 
@@ -177,7 +177,7 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix'
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.tight_layout()
-    plt.show()
+    plt.savefig('wykres2.png')
 
 plot_confusion_matrix(cm, classes=['cat','dog'], normalize=False)
 
@@ -201,7 +201,7 @@ if num_to_show > 0:
         pred_label = 'dog' if y_pred[idx]==1 else 'cat'
         plt.title(f"true: {true_label}\npred: {pred_label}")
     plt.tight_layout()
-    plt.show()
+    plt.savefig('wykres3.png')
 else:
     print("Brak błędnych klasyfikacji do pokazania.")
 
