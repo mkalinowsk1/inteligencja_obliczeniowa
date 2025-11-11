@@ -10,15 +10,15 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLROnPlateau
 
-# --- Ustawienia użytkownika ---
-DATA_PATH = 'C:/Users/Kali/Desktop/code/dogs-cats-mini'   # zmień jeśli masz w innym miejscu       # katalog docelowy po rozpakowaniu
-IMG_SIZE = (150, 150)            # rozmiar miniaturek - można zmienić (np. 128x128)
+
+DATA_PATH = 'C:/Users/Kali/Desktop/code/dogs-cats-mini'   
+IMG_SIZE = (150, 150)            
 BATCH_SIZE = 32
-EPOCHS = 20                       # podnieś jeśli masz czas/GPU
-VALIDATION_SPLIT = 0.2            # część train -> walidacja
+EPOCHS = 1                      
+VALIDATION_SPLIT = 0.2            
 SEED = 42
 AUTOTUNE = tf.data.AUTOTUNE
-# ------------------------------
+
 print("GPUs Available:", tf.config.list_physical_devices('GPU'))
 
 cats_dir = os.path.join(DATA_PATH, 'cats')
@@ -55,7 +55,7 @@ train_generator = train_datagen.flow_from_directory(
     DATA_PATH,
     target_size=IMG_SIZE,
     batch_size=BATCH_SIZE,
-    class_mode='binary',   # cat/dog -> binary
+    class_mode='binary',   
     subset='training',
     seed=SEED
 )
@@ -69,8 +69,8 @@ validation_generator = train_datagen.flow_from_directory(
     seed=SEED
 )
 
-# Jeśli masz oddzielny test set, wczytaj analogicznie. Tutaj użyjemy walidacji jako test.
-# 3) Funkcja budująca model (możesz zmienić architekturę i hiperparametry)
+
+# 3) Funkcja budująca model 
 def build_model(input_shape=(*IMG_SIZE, 3), base_filters=32, dropout_rate=0.5):
     model = Sequential()
     model.add(Conv2D(base_filters, (3,3), activation='relu', input_shape=input_shape))
@@ -88,18 +88,18 @@ def build_model(input_shape=(*IMG_SIZE, 3), base_filters=32, dropout_rate=0.5):
     model.add(Flatten())
     model.add(Dense(256, activation='relu'))
     model.add(Dropout(dropout_rate))
-    model.add(Dense(1, activation='sigmoid'))  # binary output
+    model.add(Dense(1, activation='sigmoid'))  
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
 
-# 4) Callbacks (zapisywanie najlepszego modelu .h5 co epokę tylko jeśli val_accuracy się polepszy)
+# 4) Callbacks (zapisywanie najlepszego modelu .h5 co epokę tylko jeśli val_accuracy lepszy)
 checkpoint_cb = ModelCheckpoint(
     'best_model.h5', monitor='val_accuracy', verbose=1, save_best_only=True, mode='max'
 )
 earlystop_cb = EarlyStopping(monitor='val_loss', patience=6, restore_best_weights=True)
 reduce_lr_cb = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3, min_lr=1e-6, verbose=1)
 
-# 5) Trening - możesz uruchomić kilka eksperymentów zmieniając parametry (patrz niżej)
+# 5) Trening
 model = build_model(base_filters=32, dropout_rate=0.5)
 model.summary()
 
@@ -136,16 +136,15 @@ def plot_history(history):
 
 plot_history(history)
 
-# 7) Ocena i macierz błędów (na zbiorze walidacyjnym)
-# Zbierz wszystkie obrazy i etykiety z validation_generator
+# 7) Ocena i macierz błędów 
 y_true = []
 y_pred = []
 filenames = validation_generator.filenames
-# Reset generator
+
 validation_generator.reset()
 steps = int(np.ceil(validation_generator.samples / validation_generator.batch_size))
 for i in range(steps):
-    X_batch, y_batch = validation_generator.next()
+    X_batch, y_batch = validation_generator.__next__()
     preds = model.predict(X_batch)
     preds_bin = (preds.ravel() >= 0.5).astype(int)
     y_true.extend(y_batch.astype(int))
@@ -158,7 +157,6 @@ cm = confusion_matrix(y_true, y_pred)
 print("Confusion matrix:\n", cm)
 print("\nClassification report:\n", classification_report(y_true, y_pred, target_names=['cat','dog']))
 
-# Rysuj macierz pomyłek
 def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues):
     plt.figure(figsize=(6,6))
     if normalize:
@@ -184,21 +182,18 @@ def plot_confusion_matrix(cm, classes, normalize=False, title='Confusion matrix'
 plot_confusion_matrix(cm, classes=['cat','dog'], normalize=False)
 
 # 8) Wypisz i pokaż kilka błędnie sklasyfikowanych obrazków
-# Znajdź indeksy błędów
+
 errors_idx = np.where(y_true != y_pred)[0]
 print(f"Liczba błędnych klasyfikacji w walidacji: {len(errors_idx)} / {len(y_true)}")
 
-# Wyświetldo 10 przykładowych błędów
+
 num_to_show = min(10, len(errors_idx))
 if num_to_show > 0:
     plt.figure(figsize=(12, 6))
     for i, idx in enumerate(errors_idx[:num_to_show]):
-        # uzyskaj nazwę pliku obrazu z validation_generator.filenames
         fname = filenames[idx]
-        # wczytaj obraz bezpośrednio z dysku przez validation_generator.directory
         img_path = os.path.join(validation_generator.directory, fname)
         img = plt.imread(img_path)
-        # Wyświetl
         plt.subplot(2, 5, i+1)
         plt.imshow(img)
         plt.axis('off')
@@ -210,9 +205,4 @@ if num_to_show > 0:
 else:
     print("Brak błędnych klasyfikacji do pokazania.")
 
-# 9) Zapis wyników treningu do pliku (opcjonalnie)
-import json
-with open('training_history.json', 'w') as f:
-    json.dump(history.history, f)
-print("Zapisano training_history.json")
 
