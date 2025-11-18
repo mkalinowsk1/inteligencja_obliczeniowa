@@ -11,7 +11,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, ReduceLRO
 from tensorflow.keras.applications import MobileNetV2
 
 # KONFIGURACJA
-DATA_PATH = 'C:/Users/Kali/Desktop/code/dogs-cats-mini'   
+DATA_PATH = '/home/kali/Desktop/code/dogs-cats-mini'   
 IMG_SIZE = (224, 224)  # Większy rozmiar dla pre-trained models
 BATCH_SIZE = 32
 EPOCHS = 15  # Możesz zmniejszyć jeśli chcesz szybszy trening
@@ -169,7 +169,7 @@ def plot_history(history):
     
     plt.tight_layout()
     plt.savefig('transfer_learning_history.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.savefig('wykres1.png')
 
 plot_history(history)
 
@@ -240,7 +240,7 @@ def plot_confusion_matrix(cm, classes):
     plt.xlabel('Predicted Label', fontsize=12, fontweight='bold')
     plt.tight_layout()
     plt.savefig('confusion_matrix_transfer_learning.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.savefig('wykres2.png')
 
 plot_confusion_matrix(cm, classes=['Cat','Dog'])
 
@@ -274,7 +274,7 @@ if num_to_show > 0:
                 fontsize=14, fontweight='bold', y=1.02)
     plt.tight_layout()
     plt.savefig('misclassified_transfer_learning.png', dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.savefig('wykres3.png')
 else:
     print("🎉 Brak błędnych klasyfikacji!")
 
