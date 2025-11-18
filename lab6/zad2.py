@@ -69,10 +69,6 @@ validation_generator = train_datagen.flow_from_directory(
     seed=SEED
 )
 
-# BUDOWA MODELU Z TRANSFER LEARNING (MobileNetV2)
-print(f"\n{'='*60}")
-print(f"Budowanie modelu Transfer Learning z MobileNetV2")
-print(f"{'='*60}\n")
 
 # Załaduj pre-trained MobileNetV2
 base_model = MobileNetV2(
@@ -84,9 +80,6 @@ base_model = MobileNetV2(
 # Zamroź warstwy bazowego modelu
 base_model.trainable = False
 
-print(f"Bazowy model MobileNetV2 załadowany (wagi z ImageNet)")
-print(f"Liczba warstw w base_model: {len(base_model.layers)}")
-print(f"Wszystkie warstwy zamrożone (trainable=False)")
 
 # Budowa pełnego modelu
 model = Sequential([
@@ -168,8 +161,7 @@ def plot_history(history):
     plt.grid(True, linestyle='--', alpha=0.5)
     
     plt.tight_layout()
-    plt.savefig('transfer_learning_history.png', dpi=300, bbox_inches='tight')
-    plt.savefig('wykres1.png')
+    plt.savefig('wykres1.png', dpi=300, bbox_inches='tight')
 
 plot_history(history)
 
@@ -239,8 +231,7 @@ def plot_confusion_matrix(cm, classes):
     plt.ylabel('True Label', fontsize=12, fontweight='bold')
     plt.xlabel('Predicted Label', fontsize=12, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('confusion_matrix_transfer_learning.png', dpi=300, bbox_inches='tight')
-    plt.savefig('wykres2.png')
+    plt.savefig('wykres2.png', dpi=300, bbox_inches='tight')
 
 plot_confusion_matrix(cm, classes=['Cat','Dog'])
 
@@ -248,12 +239,9 @@ plot_confusion_matrix(cm, classes=['Cat','Dog'])
 errors_idx = np.where(y_true != y_pred)[0]
 accuracy = (len(y_true) - len(errors_idx)) / len(y_true) * 100
 
-print(f"\n{'='*60}")
-print(f"PODSUMOWANIE")
-print(f"{'='*60}")
+
 print(f"Liczba błędnych klasyfikacji: {len(errors_idx)} / {len(y_true)}")
 print(f"Dokładność na zbiorze walidacyjnym: {accuracy:.2f}%")
-print(f"{'='*60}\n")
 
 num_to_show = min(10, len(errors_idx))
 if num_to_show > 0:
@@ -273,17 +261,7 @@ if num_to_show > 0:
     plt.suptitle('Misclassified Examples - Transfer Learning', 
                 fontsize=14, fontweight='bold', y=1.02)
     plt.tight_layout()
-    plt.savefig('misclassified_transfer_learning.png', dpi=300, bbox_inches='tight')
-    plt.savefig('wykres3.png')
+    plt.savefig('wykres3.png', dpi=300, bbox_inches='tight')
 else:
-    print("🎉 Brak błędnych klasyfikacji!")
+    print("Brak błędnych klasyfikacji!")
 
-print("\n" + "="*60)
-print("✅ TRANSFER LEARNING ZAKOŃCZONY!")
-print("="*60)
-print("\nZapisane pliki:")
-print("  📁 best_model_transfer_learning.h5")
-print("  📊 transfer_learning_history.png")
-print("  📊 confusion_matrix_transfer_learning.png")
-print("  📊 misclassified_transfer_learning.png")
-print("\n" + "="*60)
