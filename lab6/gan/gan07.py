@@ -178,6 +178,6 @@ dataset = load_real_samples()
 #number of epochs
 n_epochs = 50
 #batch size
-batch_size = 256
+batch_size = 32
 # train model
 train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs, batch_size)
