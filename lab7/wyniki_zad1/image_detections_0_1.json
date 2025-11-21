@@ -1,0 +1,731 @@
+{
+    "confidence_threshold": 0.1,
+    "detections": [
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.9463764429092407,
+            "bbox_xyxy": [
+                587,
+                788,
+                854,
+                917
+            ]
+        },
+        {
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.9457403421401978,
+            "bbox_xyxy": [
+                459,
+                54,
+                1001,
+                748
+            ]
+        },
+        {
+            "class_id": 63,
+            "class_name": "laptop",
+            "confidence": 0.9419498443603516,
+            "bbox_xyxy": [
+                202,
+                516,
+                690,
+                806
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.9395384788513184,
+            "bbox_xyxy": [
+                61,
+                753,
+                317,
+                875
+            ]
+        },
+        {
+            "class_id": 54,
+            "class_name": "donut",
+            "confidence": 0.9353142380714417,
+            "bbox_xyxy": [
+                481,
+                878,
+                610,
+                979
+            ]
+        },
+        {
+            "class_id": 41,
+            "class_name": "cup",
+            "confidence": 0.9348676800727844,
+            "bbox_xyxy": [
+                1006,
+                745,
+                1161,
+                892
+            ]
+        },
+        {
+            "class_id": 62,
+            "class_name": "tv",
+            "confidence": 0.9332699179649353,
+            "bbox_xyxy": [
+                886,
+                21,
+                1258,
+                263
+            ]
+        },
+        {
+            "class_id": 77,
+            "class_name": "teddy bear",
+            "confidence": 0.9311189651489258,
+            "bbox_xyxy": [
+                160,
+                390,
+                271,
+                507
+            ]
+        },
+        {
+            "class_id": 24,
+            "class_name": "backpack",
+            "confidence": 0.9205276370048523,
+            "bbox_xyxy": [
+                1146,
+                739,
+                1387,
+                1018
+            ]
+        },
+        {
+            "class_id": 57,
+            "class_name": "couch",
+            "confidence": 0.9173749685287476,
+            "bbox_xyxy": [
+                0,
+                324,
+                430,
+                637
+            ]
+        },
+        {
+            "class_id": 45,
+            "class_name": "bowl",
+            "confidence": 0.9135321974754333,
+            "bbox_xyxy": [
+                762,
+                864,
+                996,
+                1021
+            ]
+        },
+        {
+            "class_id": 47,
+            "class_name": "apple",
+            "confidence": 0.9032734036445618,
+            "bbox_xyxy": [
+                798,
+                866,
+                912,
+                973
+            ]
+        },
+        {
+            "class_id": 39,
+            "class_name": "bottle",
+            "confidence": 0.90165114402771,
+            "bbox_xyxy": [
+                883,
+                648,
+                972,
+                886
+            ]
+        },
+        {
+            "class_id": 58,
+            "class_name": "potted plant",
+            "confidence": 0.8900411128997803,
+            "bbox_xyxy": [
+                1160,
+                232,
+                1317,
+                420
+            ]
+        },
+        {
+            "class_id": 26,
+            "class_name": "handbag",
+            "confidence": 0.882792055606842,
+            "bbox_xyxy": [
+                1340,
+                871,
+                1503,
+                1021
+            ]
+        },
+        {
+            "class_id": 56,
+            "class_name": "chair",
+            "confidence": 0.8649541139602661,
+            "bbox_xyxy": [
+                980,
+                516,
+                1085,
+                730
+            ]
+        },
+        {
+            "class_id": 60,
+            "class_name": "dining table",
+            "confidence": 0.8436416387557983,
+            "bbox_xyxy": [
+                0,
+                603,
+                1194,
+                1011
+            ]
+        },
+        {
+            "class_id": 58,
+            "class_name": "potted plant",
+            "confidence": 0.8244805932044983,
+            "bbox_xyxy": [
+                423,
+                297,
+                506,
+                407
+            ]
+        },
+        {
+            "class_id": 74,
+            "class_name": "clock",
+            "confidence": 0.807718813419342,
+            "bbox_xyxy": [
+                1453,
+                196,
+                1510,
+                261
+            ]
+        },
+        {
+            "class_id": 75,
+            "class_name": "vase",
+            "confidence": 0.7581331729888916,
+            "bbox_xyxy": [
+                1473,
+                38,
+                1535,
+                97
+            ]
+        },
+        {
+            "class_id": 75,
+            "class_name": "vase",
+            "confidence": 0.7263719439506531,
+            "bbox_xyxy": [
+                1475,
+                453,
+                1535,
+                570
+            ]
+        },
+        {
+            "class_id": 58,
+            "class_name": "potted plant",
+            "confidence": 0.7125715017318726,
+            "bbox_xyxy": [
+                1462,
+                299,
+                1535,
+                431
+            ]
+        },
+        {
+            "class_id": 47,
+            "class_name": "apple",
+            "confidence": 0.6960613131523132,
+            "bbox_xyxy": [
+                0,
+                615,
+                164,
+                701
+            ]
+        },
+        {
+            "class_id": 45,
+            "class_name": "bowl",
+            "confidence": 0.6243537068367004,
+            "bbox_xyxy": [
+                0,
+                648,
+                183,
+                760
+            ]
+        },
+        {
+            "class_id": 67,
+            "class_name": "cell phone",
+            "confidence": 0.6143056750297546,
+            "bbox_xyxy": [
+                259,
+                808,
+                450,
+                905
+            ]
+        },
+        {
+            "class_id": 47,
+            "class_name": "apple",
+            "confidence": 0.5676789283752441,
+            "bbox_xyxy": [
+                902,
+                903,
+                974,
+                973
+            ]
+        },
+        {
+            "class_id": 75,
+            "class_name": "vase",
+            "confidence": 0.5207019448280334,
+            "bbox_xyxy": [
+                1207,
+                358,
+                1281,
+                419
+            ]
+        },
+        {
+            "class_id": 75,
+            "class_name": "vase",
+            "confidence": 0.5158962607383728,
+            "bbox_xyxy": [
+                440,
+                362,
+                488,
+                407
+            ]
+        },
+        {
+            "class_id": 58,
+            "class_name": "potted plant",
+            "confidence": 0.4460306763648987,
+            "bbox_xyxy": [
+                1472,
+                0,
+                1535,
+                96
+            ]
+        },
+        {
+            "class_id": 75,
+            "class_name": "vase",
+            "confidence": 0.408119797706604,
+            "bbox_xyxy": [
+                1469,
+                380,
+                1531,
+                431
+            ]
+        },
+        {
+            "class_id": 43,
+            "class_name": "knife",
+            "confidence": 0.35574251413345337,
+            "bbox_xyxy": [
+                384,
+                828,
+                584,
+                923
+            ]
+        },
+        {
+            "class_id": 76,
+            "class_name": "scissors",
+            "confidence": 0.3501644432544708,
+            "bbox_xyxy": [
+                383,
+                829,
+                584,
+                924
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.23470598459243774,
+            "bbox_xyxy": [
+                1072,
+                366,
+                1172,
+                414
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.23064516484737396,
+            "bbox_xyxy": [
+                1312,
+                597,
+                1534,
+                724
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.22378584742546082,
+            "bbox_xyxy": [
+                1402,
+                323,
+                1428,
+                427
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.20754949748516083,
+            "bbox_xyxy": [
+                1381,
+                159,
+                1403,
+                261
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.1870293766260147,
+            "bbox_xyxy": [
+                1413,
+                160,
+                1445,
+                261
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.18593980371952057,
+            "bbox_xyxy": [
+                1333,
+                304,
+                1357,
+                423
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.17072749137878418,
+            "bbox_xyxy": [
+                1360,
+                312,
+                1381,
+                424
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.16720591485500336,
+            "bbox_xyxy": [
+                1421,
+                337,
+                1444,
+                428
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.16538886725902557,
+            "bbox_xyxy": [
+                595,
+                36,
+                614,
+                117
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.1624358594417572,
+            "bbox_xyxy": [
+                1363,
+                467,
+                1394,
+                563
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.15763579308986664,
+            "bbox_xyxy": [
+                595,
+                169,
+                613,
+                241
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.151715949177742,
+            "bbox_xyxy": [
+                1325,
+                302,
+                1460,
+                428
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.147771954536438,
+            "bbox_xyxy": [
+                1067,
+                552,
+                1270,
+                682
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.14530816674232483,
+            "bbox_xyxy": [
+                1212,
+                583,
+                1237,
+                676
+            ]
+        },
+        {
+            "class_id": 47,
+            "class_name": "apple",
+            "confidence": 0.13853251934051514,
+            "bbox_xyxy": [
+                111,
+                626,
+                167,
+                688
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.13477830588817596,
+            "bbox_xyxy": [
+                1092,
+                455,
+                1112,
+                528
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.1345653086900711,
+            "bbox_xyxy": [
+                567,
+                284,
+                603,
+                377
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.13294552266597748,
+            "bbox_xyxy": [
+                1399,
+                157,
+                1420,
+                260
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.13213247060775757,
+            "bbox_xyxy": [
+                613,
+                46,
+                630,
+                116
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.12961088120937347,
+            "bbox_xyxy": [
+                1402,
+                0,
+                1420,
+                99
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.12943671643733978,
+            "bbox_xyxy": [
+                1329,
+                152,
+                1449,
+                262
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.12699487805366516,
+            "bbox_xyxy": [
+                1367,
+                160,
+                1387,
+                260
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.1258053481578827,
+            "bbox_xyxy": [
+                1251,
+                455,
+                1266,
+                545
+            ]
+        },
+        {
+            "class_id": 47,
+            "class_name": "apple",
+            "confidence": 0.123263418674469,
+            "bbox_xyxy": [
+                0,
+                637,
+                71,
+                700
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.1219877228140831,
+            "bbox_xyxy": [
+                1430,
+                613,
+                1534,
+                722
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.11960060894489288,
+            "bbox_xyxy": [
+                1409,
+                316,
+                1430,
+                427
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.11477191746234894,
+            "bbox_xyxy": [
+                1392,
+                478,
+                1414,
+                565
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.11443144828081131,
+            "bbox_xyxy": [
+                561,
+                18,
+                723,
+                118
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.11383454501628876,
+            "bbox_xyxy": [
+                566,
+                36,
+                598,
+                117
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.10804099589586258,
+            "bbox_xyxy": [
+                1374,
+                312,
+                1395,
+                425
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.10748401284217834,
+            "bbox_xyxy": [
+                554,
+                286,
+                653,
+                379
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.10656595975160599,
+            "bbox_xyxy": [
+                1144,
+                574,
+                1171,
+                667
+            ]
+        },
+        {
+            "class_id": 73,
+            "class_name": "book",
+            "confidence": 0.10498996824026108,
+            "bbox_xyxy": [
+                1438,
+                24,
+                1463,
+                98
+            ]
+        },
+        {
+            "class_id": 66,
+            "class_name": "keyboard",
+            "confidence": 0.10273515433073044,
+            "bbox_xyxy": [
+                475,
+                689,
+                691,
+                799
+            ]
+        }
+    ]
+}

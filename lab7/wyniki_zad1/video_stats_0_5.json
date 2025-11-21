@@ -1,0 +1,27 @@
+{
+    "confidence_threshold": 0.5,
+    "class_counts": {
+        "potted plant": 277,
+        "vase": 235,
+        "apple": 143,
+        "bowl": 112,
+        "bottle": 103,
+        "laptop": 100,
+        "person": 100,
+        "couch": 100,
+        "teddy bear": 100,
+        "clock": 82,
+        "tv": 81,
+        "dining table": 71,
+        "book": 62,
+        "cup": 55,
+        "chair": 46,
+        "cell phone": 32,
+        "backpack": 28,
+        "donut": 20,
+        "handbag": 13,
+        "knife": 7,
+        "spoon": 5,
+        "scissors": 1
+    }
+}
