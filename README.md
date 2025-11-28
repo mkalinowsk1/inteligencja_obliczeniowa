@@ -14,7 +14,7 @@ This section highlights the most challenging and representative exercises comple
 * **Iris Classification (Supervised Learning):** Implemented and tuned classical **K-Nearest Neighbors (KNN)** and **Support Vector Machines (SVM)** models for multi-class classification, focusing on feature scaling and model evaluation.
 * **Convolutional Neural Networks (CNNs):** Designed, trained, and optimized deep CNN architectures from scratch using **PyTorch/TensorFlow** for advanced image processing tasks.
 * **Identifying Objects in Pictures (Computer Vision):** Developed solutions utilizing CNNs and techniques like pooling and convolution to achieve high accuracy in object detection and classification tasks on complex datasets.
-* **Transfer Learning (Deep Learning Optimization):** Applied pre-trained models (e.g., **VGG, ResNet**) and fine-tuning techniques to significantly reduce training time and improve performance on new, related image classification challenges.
+* **Transfer Learning (Deep Learning Optimization):** Applied pre-trained models (e.g., **MobileNetV2**) and fine-tuning techniques to significantly reduce training time and improve performance on new, related image classification challenges.
 * **Genetic Algorithms (Optimization & Search):** Implemented foundational concepts of **Evolutionary Computing** to solve optimization problems, demonstrating an understanding of selection, crossover, and mutation processes.
 ## 🛠️ Technologies Used
 
